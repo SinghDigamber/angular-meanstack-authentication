@@ -7,7 +7,7 @@ Angular 8 JWT User Authentication Tutorial - Learn how to build and implement JS
 
 ## Clone Token-Based Auth API
 Clone the repo inside the Angular's root folder.
-`git clone https://github.com/SinghDigamber/node-token-based-authentication.git`
+* `git clone https://github.com/SinghDigamber/node-token-based-authentication.git`
 
 ## Start the Node Server
 * Run `npm install` to install required packages
