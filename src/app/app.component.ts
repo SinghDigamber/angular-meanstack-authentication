@@ -4,15 +4,12 @@ import { AuthService } from './shared/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent {
-
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService) {}
 
   logout() {
-    this.authService.doLogout()
+    this.authService.doLogout();
   }
-
 }

@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+} from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 export class AuthService {
@@ -14,31 +18,25 @@ export class AuthService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
 
-  constructor(
-    private http: HttpClient,
-    public router: Router
-  ) {
-  }
+  constructor(private http: HttpClient, public router: Router) {}
 
   // Sign-up
   signUp(user: User): Observable<any> {
     let api = `${this.endpoint}/register-user`;
-    return this.http.post(api, user)
-      .pipe(
-        catchError(this.handleError)
-      )
+    return this.http.post(api, user).pipe(catchError(this.handleError));
   }
 
   // Sign-in
   signIn(user: User) {
-    return this.http.post<any>(`${this.endpoint}/signin`, user)
+    return this.http
+      .post<any>(`${this.endpoint}/signin`, user)
       .subscribe((res: any) => {
-        localStorage.setItem('access_token', res.token)
+        localStorage.setItem('access_token', res.token);
         this.getUserProfile(res._id).subscribe((res) => {
           this.currentUser = res;
           this.router.navigate(['user-profile/' + res.msg._id]);
-        })
-      })
+        });
+      });
   }
 
   getToken() {
@@ -47,7 +45,7 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     let authToken = localStorage.getItem('access_token');
-    return (authToken !== null) ? true : false;
+    return authToken !== null ? true : false;
   }
 
   doLogout() {
@@ -58,17 +56,17 @@ export class AuthService {
   }
 
   // User profile
-  getUserProfile(id): Observable<any> {
+  getUserProfile(id: any): Observable<any> {
     let api = `${this.endpoint}/user-profile/${id}`;
     return this.http.get(api, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {}
+      map((res) => {
+        return res || {};
       }),
       catchError(this.handleError)
-    )
+    );
   }
 
-  // Error 
+  // Error
   handleError(error: HttpErrorResponse) {
     let msg = '';
     if (error.error instanceof ErrorEvent) {

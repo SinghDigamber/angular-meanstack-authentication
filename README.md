@@ -1,25 +1,27 @@
 # AngularMeanstackAuthentication
 
-Angular JWT User Authentication Tutorial - Learn how to build and implement JSON web token (JWT) based user authentication system in Angular 8 or 9 app.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
-[Angular JWT User Authentication Tutorial](https://www.positronx.io/angular-jwt-user-authentication-tutorial/)
+## Development server
 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Clone Token-Based Auth API
-Clone the repo inside the Angular's root folder.
-* `git clone https://github.com/SinghDigamber/node-token-based-authentication.git`
+## Code scaffolding
 
-## Start the Node Server
-* Run `npm install` to install required packages
-* Open terminal run `nodemon`
-* Open other terminal run `mongod`
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Authentication REST APIs
-* GET (users list)	      **/api**
-* POST (sign-in)	      **/api/signin**
-* POST (sign-up)	      **/api/register-user**
-* GET (user profile)	  **/api/user-profile/id**
-* PUT (update user)	      **/api/update-user/id**
-* DELETE (delete user)    **/api/delete-user/id**
+## Build
 
-Node API URL on [http://localhost:4000/api](http://localhost:4000/api)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from './../../shared/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.scss'],
 })
 
 export class SigninComponent implements OnInit {
@@ -19,13 +19,13 @@ export class SigninComponent implements OnInit {
   ) {
     this.signinForm = this.fb.group({
       email: [''],
-      password: ['']
-    })
+      password: [''],
+    });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   loginUser() {
-    this.authService.signIn(this.signinForm.value)
+    this.authService.signIn(this.signinForm.value);
   }
 }
