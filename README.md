@@ -1,6 +1,6 @@
 # AngularMeanstackAuthentication
 
-Learn how to build and implement JSON web token (JWT) based user authentication system in Angular app. By [Digamber Singh]([https://github.com/angular/angular-cli](https://www.positronx.io/author/digamber-singh/) .
+Learn how to build and implement JSON web token (JWT) based user authentication system in Angular app. By [Digamber Singh](https://www.positronx.io/author/digamber-singh/).
 
 ## Development server
 
